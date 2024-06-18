@@ -19,7 +19,7 @@ public class NotificationSubscriber {
     public void receiveTopic(String jsonMessage) {
         try {
             NotificationDto message = objectMapper.readValue(jsonMessage, NotificationDto.class);
-            System.out.println("Received message from topic: " + message.getMessage());
+            System.out.println("Received message from topic: " + message.getLinkToConversation());
             orkestrator.receiveNewNotification(message);
         } catch (Exception e) {
             e.printStackTrace();

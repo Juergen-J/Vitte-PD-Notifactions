@@ -13,5 +13,5 @@ public class NotificationDto {
 
     private long userId;
 
-    private String message;
+    private String linkToConversation;
 }
