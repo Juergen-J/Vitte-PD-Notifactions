@@ -1,6 +1,7 @@
 package com.vitte.notification.service.mq;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vitte.notification.dto.PersonDto;
 import com.vitte.notification.dto.UserDto;
 import com.vitte.notification.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -9,16 +10,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserSubscriber {
+public class NewUserSubscriber {
 
+    private static final String TOPIC_NAME = "new.user";
     private final ObjectMapper objectMapper;
-
     private final UserService userService;
 
-    @JmsListener(destination = "new.user")
+    @JmsListener(destination =TOPIC_NAME)
     public void receiveTopic(String jsonMessage) {
         try {
-            UserDto user = objectMapper.readValue(jsonMessage, UserDto.class);
+            PersonDto user = objectMapper.readValue(jsonMessage, PersonDto.class);
             userService.saveUser(user);
         } catch (Exception e) {
             e.printStackTrace();

@@ -23,8 +23,17 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>3.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <version>3.2.3</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
@@ -60,6 +69,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!-- Provides the documentation API -->
+        <dependency>
+            <groupId>io.github.springwolf</groupId>
+            <artifactId>springwolf-jms</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <!-- Provides the UI - optional (recommended) -->
+        <dependency>
+            <groupId>io.github.springwolf</groupId>
+            <artifactId>springwolf-ui</artifactId>
+            <version>1.4.0</version>
         </dependency>
     </dependencies>
 

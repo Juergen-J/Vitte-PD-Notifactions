@@ -1,5 +1,6 @@
 package com.vitte.notification.service.notification;
 
+import com.vitte.notification.dto.UserDto;
 import com.vitte.notification.entity.NotificationEntity;
 import com.vitte.notification.entity.UserEntity;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class NotificationSenderFacade {
     private final List<Notificator> notificators;
 
 
-    public void sendNotification(UserEntity userEntity, NotificationEntity savedNotification) {
+    public void sendNotification(UserDto userEntity, NotificationEntity savedNotification) {
         userEntity.getContacts().forEach(contact -> {
             notificators.stream()
                     .filter(notificator -> notificator.isSupportedType(contact.getNotificationType()))

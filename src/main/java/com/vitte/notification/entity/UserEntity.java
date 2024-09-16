@@ -19,7 +19,10 @@ public class UserEntity {
 
     private long userId;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private String firstName;
 
+    private String lastName;
+
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Contact> contacts;
 }
